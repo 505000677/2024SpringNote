@@ -157,7 +157,11 @@ attribute for a particular object
 - Data cleaning
   - Process of dealing with duplicate data issues
 
+= Day3
 
+#definition(name: "Eucliean Distance")[
+  
+]
 
 #theorem(name: "Yuanxiang Remarkable Thenreom")[
   All Gaysv are Gays.

@@ -44,6 +44,12 @@ $ S_A^("process") \u{21C4}S_B_("material") $
     image("day2-1-1.png", width: 80%)
   )
 ]
-123
+= Day3
+
+
+
+
+
+
 
 $ integral^a_b f(x)d x $
