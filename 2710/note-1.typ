@@ -47,6 +47,24 @@
 #question(name:"Graph search problem")[
   - A search problem can ben often represented with a 
 ]
+
+= Day 4 Uninformaed Method
+#definition(name:"Iterative deepening (IDA)")[
+  - check tetxbook figure 3.8 b
+]
+#clarification(name:"Properties of IDA")[
+  - Completeness: Yes. The solution is reached if it exists.( Same as )
+]
+#definition(name:"Bi-directional search")[
+  - In some seach problems we want to find the path from the initial state to the unique goal state (e.g. Traveler problem)
+  - 
+]
+#definition(name:" Minimum cost path search")[
+  - x
+]
+#definition(name:"Uniform cost search")[
+  - x
+]
 123
 
 $ integral^a_b f(x)d x $
