@@ -68,13 +68,13 @@ Communications of the ACM, July 2014
 )
 #clarification(name: "A More Complete View of Data")[
 
-• Data may have parts
+- Data may have parts
 
-• Attributes (objects) may have relationships with other attributes (objects)
+- Attributes (objects) may have relationships with other attributes (objects)
 
-• More generally, data may have structure
+- More generally, data may have structure
 
-• Data can be incomplete
+- Data can be incomplete
 ]
 #definition(name:"Attribute Values")[
 
@@ -206,6 +206,111 @@ attribute for a particular object
   - $cos(d_1,d_2)= (<d_1,d_2>)/(||d_1||*||d_2||)$
   - where $(<d_1,d_2>)$ indicates inner product or vector dot product of vector, and $||d||$ is the length (norm) of vector $d$
 ]
+
+= Day4
+#definition(name:"Comparison of Proximity Measures")[
+  -  Domain of application
+    - Similarity measures tend to be specific to the type of attribute and data
+    - Record data, images, graphs, sequences, 3D-protein structure, etc. tend to have different measures
+  - However, one can talk about various properties that you would like a proximity measure to have
+    - Symmetry is a common one
+    - Tolerance to noise and outliers is another
+    - Ability to find more types of patterns?
+    - Many others possible
+  - The measure must be applicable to the data and produce results that agree with domain knowledge
+]
+#definition(name:"Density")[
+  - Measures the degree to which data objects are close to each other in a specified area
+  - The notion of density is closely related to that of proximity
+  - Concept of density is typically used for clustering and anomaly detection
+  - Examples:
+    - Euclidean density
+      - Euclidean density = number of points per unit volume
+    - Probability density
+      - Estimate what the distribution of the data looks like
+    - Graph-based density
+      - Connectivity
+]
+#example(name:" Eulidean Density: Grid-based Approach")[
+  - Euclidean density = number of points per unit volume
+  - Simplest approach is to divide region into a number of rectangular cells of equal volume and define density as $"#"$ of points the cell contains
+  #figure(
+    image("den.png", width: 80%)
+    )
+]
+== Data preprocessing
+#definition(name:"Aggregation")[
+  - Combining two or more attributes (or objects) into a single attribute (or object)
+  - Purpose
+    - Data reduction
+      - Reduce the number of attributes or objects
+    - Change of scale
+      - Cities aggregated into regions, states, countries, etc.
+      - Days aggregated into weeks, months, or years
+    - More “stable” data
+    - Aggregated data tends to have less variability
+]
+#example(name:"Example: Precipitation in Australia")[
+  - This example is based on precipitation in Australia from the period 1982 to 1993.
+  The next slide shows
+    - A histogram for the standard deviation of average monthly precipitation for 3,030 0.5◦ by 0.5◦ grid cells in Australia, and
+    - A histogram for the standard deviation of the average yearly precipitation for the same locations.
+  - The average yearly precipitation has less variability than the average monthly precipitation.
+  - All precipitation measurements (and their standard deviations) are in centimeters.
+  #figure(
+    image("pre.png", width: 80%)
+  )
+]
+#definition(name:"Sampling")[
+  - Sampling is the process of selecting a subset of data objects
+  - Purpose
+    - Data reduction
+    - Speed up the data mining process
+    - May improve the performance of the model
+    - May improve the quality of the model
+  - Sampling is the main technique employed for data reduction.
+    - It is often used for both the preliminary investigation of the data and the final data analysis.
+  - Statisticians often sample because obtaining the entire set of data of interest is too expensive or time consuming.
+  - Sampling is typically used in data mining because
+  processing the entire set of data of interest is too expensive or time consuming.
+  - The key principle for effective sampling is the following:
+    - Fundamental for proper sampling:
+      - Must avoid having a sample that is not representative of the entire “population”
+      - i.e., must avoid sample bias
+    - Example: Literary Digest poll in the 1936 presidential election
+      - Surveyed over two million people, chosen from the magazine's subscriber list, phone books, and car registrations.
+      - Sample was not representative of entire population of voters (not everyone could afford a phone or a car during the Depression!)
+    - Using a sample will work almost as well as using the entire data set, if the sample is representative
+    - A sample is representative if it has approximately the same properties (of interest) as the original set of data
+    - Example: Original dataset - [10,20,40,30] locations with temperature in $[<-10], [-10,0],[0,20],[>20]$. After sampling, we have [2,4,8,6] samples in these intervals.
+  #figure(
+    image("ssize.png", width: 80%)
+  )
+]
+#clarification(name:"Types of Sampling")[
+  - Simple random sample without replacement (SRSWOR):
+    - Draw s of the N tuples (s << N)
+    - Probability of drawing any one tuple is 1/N -> 1/(N-1) -> ...
+    - Once an object is drawn, it is removed from the population
+  - Simple random sample with replacement (SRSWR):
+    - Draw s of the N tuples (s << N)
+    - Each time a tuple is drawn, it is replaced (i.e., placed back into original set, so that it may be drawn again)
+  - Stratified sampling
+    - Split the data into several partitions; then draw random samples from each partition
+]
+#definition(name:"Feature Subset Selection")[
+  - Reduce the dimensionality of data
+  - Redundant features
+    - Duplicate much or all of the information contained in one or more other attributes
+    - Example: purchase price of a product and the amount of sales tax paid
+  - Irrelevant features
+    - Contain no information that is useful for the data mining task at hand
+    - Example: students' ID is often irrelevant to the task of predicting students' GPA
+  - Many techniques developed, especially for classification
+]
+
+
+
 
 #theorem(name: "Yuanxiang Remarkable Thenreom")[
   All Gaysv are Gays.
