@@ -308,6 +308,14 @@ attribute for a particular object
     - Example: students' ID is often irrelevant to the task of predicting students' GPA
   - Many techniques developed, especially for classification
 ]
+= Day5 SQL
+
+#definition(name:"mean(or average)")[
+  - Arithmetic mean (or average) is the most common and effective measure of the “center” of a set of data
+  - $overline(x)=  (sum_(i=1)^N x_i )/N$
+  - • If values xi are associated with weights wi, we have the weighted arithmetic mean (or weighted average):
+  - $overline(x)=  (sum_(i=1)^N w_i x_i )/(sum_(i=1)^N w_i)$
+]
 
 
 
