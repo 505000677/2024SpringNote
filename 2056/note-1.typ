@@ -313,9 +313,72 @@ attribute for a particular object
 #definition(name:"mean(or average)")[
   - Arithmetic mean (or average) is the most common and effective measure of the “center” of a set of data
   - $overline(x)=  (sum_(i=1)^N x_i )/N$
-  - • If values xi are associated with weights wi, we have the weighted arithmetic mean (or weighted average):
+  - - If values xi are associated with weights wi, we have the weighted arithmetic mean (or weighted average):
   - $overline(x)=  (sum_(i=1)^N w_i x_i )/(sum_(i=1)^N w_i)$
+
 ]
+
+= Day6 Introduction to The  relational model And SQL
+
+#definition(name:"The Relational Model")[
+  - "Relations just a table"
+  - It is the most popular data model
+    - Simplest, most uniform data structures
+    - Most formal (algebra to describe operations)
+  - Introduced in 1970 (by E. F. Codd – Turing Award/1981)
+    - Before: records, pointers, sets, etc
+    - Hierarchical Data Model (IBM IMS, 1966-68)
+    - Network Data Model (CODASYL DBTG, 1969)
+  - Everything from real world is represented by relations
+    - i.e., tables
+  - Each table has multiple rows and columns
+    - Row in a table “binds” values together (row = tuple)
+  - Data stored in tables
+    - Everything is stored in tables under the relational model!
+]
+
+#example(name:" Let's store more data: List of products")[
+    - Product Number = 557
+      - Name = Fleece Pullover (in English)
+      - Colors = navy, black
+      - Department = Women's
+    - Product Number = 563
+      - Name = Floppy Sun Hat (in English)
+      - Department = Accessories
+    - Product Number = 443
+      - Name = Deluxe Travel Bag (in English)
+      - Department = Accessories
+    - Product Number = 784
+      - Name = Cotton Dress Shirt (in English)
+      - Colors = white, gray
+    - Department = Men's
+      - Description: Our <i>favorite</i> shirt!
+  - #figure(
+    image("relation1.png", width: 80%)
+  )
+  - #figure(
+    image("relation2.png", width: 80%)
+  )
+  - 
+]
+#figure(
+    image("relation3.png", width: 80%)
+  )
+Sample relations: Price
+#figure(
+    image("relation6.png", width: 80%)
+  )
+#example(name:"Sample relation:")[
+  - Catlog
+  #figure(
+    image("relation4.png", width: 80%)
+  )
+  - Orders and OrerItems
+  #figure(
+    image("relation5.png", width: 80%)
+  )
+]
+== SQL
 
 
 
