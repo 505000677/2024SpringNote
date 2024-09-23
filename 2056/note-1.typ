@@ -380,7 +380,7 @@ Sample relations: Price
 ]
 == SQL
 
-
+== DAy 7 Join and KEys
 
 
 #theorem(name: "Yuanxiang Remarkable Thenreom")[
@@ -388,3 +388,23 @@ Sample relations: Price
 ]
 
 $ integral^a_b f(x)d x $
+
+== Day 8 
+= Aliasing
+= Aggregation Queries
+
+#definition(name: "Aggregation functions")[
+  - SQL provides several aggregation functions
+    - COUNT, SUM, AVG, MIN, MAX
+]
+#definition(name:" Aggreagtion with grouping")[
+  - select year, avg(grade) from students group by year
+]
+
+#definition(name:" Modification Queries")[
+  - SQL provides several modification queries
+    - INSERT, DELETE, UPDATE
+  - Two forms: Implicit and explicit
+    - Implicit: specify only the values to be inserted
+    - Explicit: specify the columns to be inserted
+]
