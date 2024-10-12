@@ -65,6 +65,13 @@
 #definition(name:"Uniform cost search")[
   - x
 ]
+== Day10.10
+#example(name:"Example:")[
+  Jack is loved by somebody: $ exists x "loves"(x, "Jack") $
+  Assume for sake of controidition: $ not "T2": not "love(y, Jack)" $
+  Unify: R1a: $not "T2" "with" {x|"Jack",y|G("Jack")}$
+
+]
 123
 
 $ integral^a_b f(x)d x $
