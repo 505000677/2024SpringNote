@@ -1,4 +1,5 @@
 #import "theorems.typ": *
+#import "@preview/statastic:0.1.0"
 
 #let project(title: "", subtitle: "", authors: (), size: 12pt, date: datetime.today(), body) = {
   // Set the document's basic properties.
