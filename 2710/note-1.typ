@@ -15,7 +15,12 @@
 
 #example(name:"Search example:")[
   Find a path from one city to anthor city
+  
 ]
+
+#figure(
+  image("Day2-1E.jpeg", width: 60%)
+)
 
 #example(name:"Traveler problem")[
   - find the minimum length path between S and T
