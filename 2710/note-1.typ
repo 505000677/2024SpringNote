@@ -22,24 +22,6 @@
   image("Day2-1E.jpeg", width: 60%)
 )
 
-#example(name:"Traveler problem")[
-  - find the minimum length path between S and T
-]
-
-#example(name:"N-queens Problem")[
-  - Find a configuration of n queens on an n x n 
-]
-
-#example(name:" Puzzle 8.")[
-  - Find a squeen
-]
-
-#definition(name:"A search problem is defined by:")[
-  - A search space:
-    - A set of objects
-  - xxx
-]
-
 #definition(name:"Search")[
   - Search( process)
     - The process of exploration of 
@@ -49,8 +31,45 @@
     - COndition to test the satisfaction of the search objective ( what it takes to determine I found the desired goal object)
 ]
 
-#question(name:"Graph search problem")[
-  - A search problem can ben often represented with a 
+#definition(name:"Graph search algorithm")[
+  - General-search (problem, strategy)
+    - initialize the search tree with the initial state of problem
+  -loop
+    - if there are no candidate states to explore next return failure choose a leaf node of       
+     the tree to expand next according to strategy
+    - if the node satisfies the goal condition return the solution expand the node and add all of
+      its successors to the tree
+  -end loop 
+]
+
+#definition(name:"Properities of the breadth-first search")[
+  - For complexity use:
+    - b = maximum branching factor
+    - d = depth of the optimal solution
+    - m = maximum depth of the search tree
+  - Completeness: Yes. If the solution exists, it will be found.
+  - Optimality: Yes. The solution found is the shortest path.
+  - Time complexity: $O(b^d)$
+  - Space complexity: $O(b^d)$ nodes are kept in the memory
+  #figure(
+    image("bfs.png", width: 60%)
+  )
+]
+#definition(name:"Properities of the depth-first search")[
+  - Completeness: No. It may not find the solution even if it exists. If infinite loops can ocour.
+    - Solution1: Limit(m) the depth of the search tree 
+    - Solution2: Avoid repeated states
+  - Optimality: No. It may not find the shortest path. Solution found first may not be
+    the shortest possible.
+  - Time complexity: $O(b^m)$ exponential in the maximum depth of the
+    search tree m
+  - Space complexity: $O(b*m)$ nodes are kept in the memory
+  #figure(
+    image("dfsSpace.png", width: 60%)
+  )
+  #figure(
+    image("eosp.png", width: 60%)
+  )
 ]
 
 = Day 4 Uninformaed Method
