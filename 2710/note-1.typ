@@ -128,10 +128,30 @@
 #definition(name:"Best-First Search")[
   - Expand the node with the lowest heuristic value
   - The heuristic function h(n) estimates the cost of the cheapest path from the state at node n to a goal state
-  - The search strategy is greedy
-  - The search strategy is greedy
-  - The search strategy is greedy
+  - The search strategy is greedy f(n)=h(n). the node that seems to be the closest to the goal is
+    expanded first
+  - $A*$ algorithm f(n)=g(n)+h(n)
+  - iterative deepening A* (IDA*)
 ]
+#definition(name:"Properties of the greedy search")[
+  - Completeness: 
+    - No. It may not find the solution even if it exists.We can loop forever. Nodes that seem to be the best 
+      choices can lead to cycles.
+    - Yes. Elimination of state repeats can solve the problem.
+  - Optimality: No. It may not find the shortest path. 
+    - Even if we reach the goal, we may be biased by a bad
+      heuristic estimate. Evaluation function disregards the cost
+      of the path built so far.
+  - Time complexity: $O(b^m)$ exponential in the maximum depth of the search tree m
+    - Worst case !!! But often better!
+  - Space complexity: $O(b*m)$ nodes are kept in the memory 
+    - Often better!
+  #figure(
+    image("greedy.png", width: 60%)
+  )
+]
+== Day 5
+
 == Day10.10
 #example(name:"Example:")[
   Jack is loved by somebody: $ exists x "loves"(x, "Jack") $
