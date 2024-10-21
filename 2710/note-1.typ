@@ -86,6 +86,12 @@
 ]
 #definition(name:"Iterative deepening (IDA)")[
   - check tetxbook figure 3.8 b
+  #figure(
+    image("ida1.png", width: 60%)
+  )
+  #figure(
+    image("ida2.png", width: 60%)
+  )
 ]
 #clarification(name:"Properties of IDA")[
   - Completeness: Yes. The solution is reached if it exists.( Same as BFS)
@@ -100,6 +106,9 @@
   - Cuts the depth of the search tree by half
   - The time complexity is $O(b^{d/2})$
   - The space complexity is $O(b^{d/2})$
+  #figure(
+    image("bds.png", width: 60%)
+  )
 ]
 #definition(name:" Minimum cost path search")[
   - Implement:
@@ -112,13 +121,19 @@
   -  Dijkstra's shortest path. In AI, the strategy goes under the name
     - Uniform cost search
 ]
-#definition(name:"Properties Uniform cost search")[
+#clarification(name:"Properties Uniform cost search")[
   - Completeness: Yes, assuming that operator costs are non-
     negative (the cost of path never decreases)
     - g(n)<=g(successors(n))
   - Optimality: Yes. Returns the least-cost path.
   - Time complexity: number of nodes with the cost g(n) smaller than the optimal cost
   - Memory (space) complexity: number of nodes with the cost g(n) smaller than the optimal cost
+  #figure(
+    image("ucs.png", width: 60%)
+  )
+  #figure(
+    image("usc1.png", width: 60%)
+  )
 ]
 #definition(name:"Informed(Heuristic) search")[
   - Informed search is a search strategy that uses problem-specific knowledge
@@ -147,11 +162,72 @@
   - Space complexity: $O(b*m)$ nodes are kept in the memory 
     - Often better!
   #figure(
+    image("gs1.png", width: 60%)
+  )
+  #figure(
     image("greedy.png", width: 60%)
   )
 ]
 == Day 5
+#definition(name:"A* Saerch")[
+  - $f(n)=g(n)+h(n)$
+  - g(n) - cost of reaching the state
+  - h(n) - estimate of the cost from the current state to a goal
+  - f(n) - estimate of the path length
+  #figure(
+    image("astar.png", width: 60%)
+  )
+]
+#clarification(name:"Properties of the A* search")[
+  - Completeness: Yes. The solution is reached if it exists. With positive costs on links, the 
+    algorithm is complete even without repeat checks.
+  - Optimality: Yes. The solution found is the shortest path.
+    - Admissible heuristic condition: h(n) <= $"h*(n)"$
+  #figure(
+    image("OPTASTAR.png", width: 60%)
+  )
+  - Time complexity: $O(b^d)$ exponential in the depth of the solution d
+    - Better than BFS and $"IDA*"$ Order roughly the number of nodes with f(n) smaller
+      than the cost of the optimal path $"g*"$
+  - Space complexity: $O(b^d)$ nodes are kept in the memory
+    - Better than BFS and $"IDA*"$
+]
+#definition(name:"Iterative deepening A* (IDA*)")[
+  - IDA* is a combination of iterative deepening and A* search
+  - The algorithm is complete and optimal
+  - The time complexity is $O(b^d)$
+  - The space complexity is $O(b*d)$
+  - Progressively increases the evaluation function limit (instead
+    of the depth limit)
+  - Performs limited-cost depth-first search for the current
+    evaluation function limit
+    - Keeps expanding nodes in the depth first manner up to the
+      evaluation function limit
+  - Problem: it is unclear what is the amount by which the
+    evaluation limit should be progressively increased
 
+  #figure(
+    image("IDAS1.png", width: 60%)
+  )
+  #figure(
+    image("IDAS2.png", width: 60%)
+  )
+]
+== Day 6
+#definition(name:" Constraint satisfaction problem(CSP)")[
+  - Two types of search:
+    - path search: We seek a path from the initial state to a state
+      satisfying the goal condition (Puzzle8, Route finding)
+    - configuration search: We seek a state (configuration )
+      satisfying the goal condition (n-queens problem)
+  - Constraint satisfaction problem (CSP)= a configuration search problem where:
+    - A state is defined by a set of variables and their values
+    - Goal condition is represented by a set constraints on
+    possible variable values
+    Special properties of the CSP lead to special search procedures
+    we can design to solve them
+
+]
 == Day10.10
 #example(name:"Example:")[
   Jack is loved by somebody: $ exists x "loves"(x, "Jack") $
