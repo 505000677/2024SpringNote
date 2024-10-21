@@ -73,21 +73,64 @@
 ]
 
 = Day 4 Uninformaed Method
+#definition(name:"Uninformed search")[
+  - Uninformed search is a search strategy that uses no problem-specific knowledge
+  - Uninformed search methods use only information available in
+    the problem definition
+    - Breadth-first search
+    - Depth-first search
+    - Iterative deepening search(IDA)
+    - Bidirectional search
+  - Minimum cost path search
+    - Uniform-cost search
+]
 #definition(name:"Iterative deepening (IDA)")[
   - check tetxbook figure 3.8 b
 ]
 #clarification(name:"Properties of IDA")[
-  - Completeness: Yes. The solution is reached if it exists.( Same as )
+  - Completeness: Yes. The solution is reached if it exists.( Same as BFS)
+  - Optimality: Yes. The solution found is the shortest path.( Same as BFS)
+  - Time complexity: $O(b^d)$ exponential in the depth of the solution d
+  worse than BFS, but asymptotically the same
+  - Space complexity: $O(b*d)$ nodes are kept in the memory. much better than BFS
 ]
 #definition(name:"Bi-directional search")[
   - In some seach problems we want to find the path from the initial state to the unique goal state (e.g. Traveler problem)
-  - 
+  - Use inverse operators for the goal-initiated search.
+  - Cuts the depth of the search tree by half
+  - The time complexity is $O(b^{d/2})$
+  - The space complexity is $O(b^{d/2})$
 ]
 #definition(name:" Minimum cost path search")[
-  - x
+  - Implement:
+    - Path cost functionor for node n :
+      - length of the path represented by the search tree branch starting at the root of the tree  
+        (initial state) to n
+  - Search strategy:
+    - Expand the leaf node with the minimum g(n) first
+    - Can be implemented by a priority queue
+  -  Dijkstra's shortest path. In AI, the strategy goes under the name
+    - Uniform cost search
 ]
-#definition(name:"Uniform cost search")[
-  - x
+#definition(name:"Properties Uniform cost search")[
+  - Completeness: Yes, assuming that operator costs are non-
+    negative (the cost of path never decreases)
+    - g(n)<=g(successors(n))
+  - Optimality: Yes. Returns the least-cost path.
+  - Time complexity: number of nodes with the cost g(n) smaller than the optimal cost
+  - Memory (space) complexity: number of nodes with the cost g(n) smaller than the optimal cost
+]
+#definition(name:"Informed(Heuristic) search")[
+  - Informed search is a search strategy that uses problem-specific knowledge
+  - Informed search methods use problem-specific knowledge to find solutions more efficiently
+  - Best first search with a heuristic function
+]
+#definition(name:"Best-First Search")[
+  - Expand the node with the lowest heuristic value
+  - The heuristic function h(n) estimates the cost of the cheapest path from the state at node n to a goal state
+  - The search strategy is greedy
+  - The search strategy is greedy
+  - The search strategy is greedy
 ]
 == Day10.10
 #example(name:"Example:")[
