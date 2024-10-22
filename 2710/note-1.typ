@@ -223,10 +223,29 @@
   - Constraint satisfaction problem (CSP)= a configuration search problem where:
     - A state is defined by a set of variables and their values
     - Goal condition is represented by a set constraints on
-    possible variable values
-    Special properties of the CSP lead to special search procedures
+      possible variable values
+  - Special properties of the CSP lead to special search procedures
     we can design to solve them
-
+]
+#definition(name:" Constraint propagation")[
+  - The process of inferring the legal and illegal values of
+    unassigned variables is referred to as constraint propagation
+  - the process of inferring of new equations and disequations
+    from existing equations and disequations
+  - Node propagation: equations (valid assignments) or disequations (invalid
+    assignments) for an individual variable by applying a
+    unary constraint
+  - Forward checking: 
+    - disequations from equations defining the partial
+      assignment, and a constraint
+    - Equations through the exhaustion of alternatives
+  - Restricted forward checking:
+    - uses only active constraints (active constraint - only one
+      variable unassigned in the constraint)
+  - Arc consistency: 
+    - disequations from the set of equations and disequations
+      defining the partial assignment, and a constraint
+    - equations through the exhaustion of alternatives
 ]
 == Day10.10
 #example(name:"Example:")[
