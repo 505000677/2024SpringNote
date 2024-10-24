@@ -247,12 +247,32 @@
       defining the partial assignment, and a constraint
     - equations through the exhaustion of alternatives
 ]
+== Day 7
+== Day 8
+
 == Day10.10
 #example(name:"Example:")[
   Jack is loved by somebody: $ exists x "loves"(x, "Jack") $
   Assume for sake of controidition: $ not "T2": not "love(y, Jack)" $
   Unify: R1a: $not "T2" "with" {x|"Jack",y|G("Jack")}$
 
+]
+
+== Day 11 Knowledge Representation. Propositional logic
+#definition(name:" Properties of inference solutions")[
+- Truth-table approach
+-  Blind
+-  Exponential in the number of variables
+- Inference rules
+  - Driven by KB sentences that are known to be True
+  - Many equivalence and inference rules to cover logic
+  - Many equivalent sentences are potentially inferred
+- Conversion to SAT - Resolution refutation
+  - More efficient
+  - Sentences must be converted into CNF, inferences on
+    CNF, eliminates many different equivalent sentences
+  - One rule-the resolution rule - is sufficient to perform
+    all inferences
 ]
 123
 
