@@ -275,5 +275,23 @@
     all inferences
 ]
 123
-
+= After Midterm
+== no idea
+#definition(name:"Bayes' rule and conditional independence")[
+  - Bayes' rule:
+    - $P(A|B and C)={P(B and C|A)P(A)}/{P(B and C)} $
+  - Conditional independence:
+    - $P(A|B,C)=P(A|B)$
+    - $P(A,B|C)=P(A|C)P(B|C)$
+]
+#definition(name:"naive bayes models")[
+  - Naive Bayes models:
+    - Assume that the features are conditionally independent given the class
+    - $P(C|F_1,F_2,...,F_n)=P(C)P(F_1|C)P(F_2|C)...P(F_n|C)$
+    - $P(C|F_1,F_2,...,F_n) prop P(C)P(F_1|C)P(F_2|C)...P(F_n|C)$
+]
+== Tuesday 11.5
+#example(name:"Contd.")[
+  
+]
 $ integral^a_b f(x)d x $
